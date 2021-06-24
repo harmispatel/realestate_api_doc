@@ -478,23 +478,37 @@
  *    "message": "Propertylist successfully",
  *    "result": [
  *        {
- *            "id": 398,
- *            "propertyName": "Unique Kamshet Dome with Breathtaking Views",
+ *            "id": 399,
  *            "price": 1500,
  *            "address": "Dome house hosted by Sapna",
+ *            "lat": "23.07462100",
+ *            "long": "72.51202400",
  *            "isFavorite": false,
- *            "image": "https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-22 10:21-1624357265.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg"
+ *            "subCategory": "",
+ *            "category": "",
+ *            "bathRooms": "5",
+ *            "bedRooms": "4",
+ *            "propertyType": "For Rent",
+ *            "areaSize": "30000",
+ *            "image": ""
  *        },
  *        {
- *            "id": 397,
- *            "propertyName": "Pali Khopoli",
- *            "price": 200,
- *            "address": "A/26, Nalanda Society, B/h Namrata Soceity,",
+ *            "id": 398,
+ *            "price": 1500,
+ *            "address": "Dome house hosted by Sapna",
+ *            "lat": "23.07462100",
+ *            "long": "72.51202400",
  *            "isFavorite": false,
- *            "image": "https://harmistechnology.com/realestate/pictures/listing-thumb/1/21.06.22.00.59-1624348766.0277-48649933.jpeg"
+ *            "subCategory": "Building",
+ *            "category": "Commerical",
+ *            "bathRooms": "5",
+ *            "bedRooms": "4",
+ *            "propertyType": "For Rent",
+ *            "areaSize": "30000",
+ *            "image": "https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-22 10:21-1624357265.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg"
  *        }
  *    ],
- *    "total": 2
+ *    "total": 4
  *}
  * @apiErrorExample {json} Token Missing error
  * HTTP/1.1 422 Unprocessable Entity
@@ -530,7 +544,7 @@
  */
 
 /**
- * @api {post} /api/getPropertyDetail Property Detail
+ * @api {post} /api/propertyDetail Property Detail
  * @apiGroup Property
  * @apiParam {String} token Authorization Token(required in header)
  * @apiParam {String} propertyId Property Id (required)

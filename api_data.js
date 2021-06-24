@@ -286,7 +286,78 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/api/getPropertyDetail",
+    "url": "/api/myProperty",
+    "title": "My Property",
+    "group": "Property",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Authorization Token(required in header)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "success",
+            "description": "<p>{1:success, 0:fail}</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>{message:'My property list successfully'}</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "result",
+            "description": "<p>Array Of Property List</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success",
+          "content": "HTTP/1.1 200 OK\n {\n    \"success\": 1,\n    \"message\": \"My property list successfully\",\n    \"result\": [\n        {\n            \"id\": 398,\n            \"propertyName\": \"Unique Kamshet Dome with Breathtaking Views\",\n            \"price\": 1500,\n            \"address\": \"Dome house hosted by Sapna\",\n            \"isFavorite\": false,\n            \"image\": \"https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-22 10:21-1624357265.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg\"\n        },\n        {\n            \"id\": 396,\n            \"propertyName\": \"Unique Kamshet Dome with Breathtaking Views\",\n            \"price\": 1500,\n            \"address\": \"Dome house hosted by Sapna\",\n            \"isFavorite\": true,\n            \"image\": \"https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-21 10:59-1624273187.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg\"\n        }\n    ],\n    \"total\": 2\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Token Missing error",
+          "content": "HTTP/1.1 422 Unprocessable Entity\n{\n      \"status\": \"Authorization Token not found\"\n}\n}",
+          "type": "json"
+        },
+        {
+          "title": "Property not found error",
+          "content": "HTTP/1.1 422 Unprocessable Entity\n{\n      \"status\": 0,\n\t\t \"error\": \"No Property  found.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./index.js",
+    "groupTitle": "Property",
+    "name": "PostApiMyproperty"
+  },
+  {
+    "type": "post",
+    "url": "/api/propertyDetail",
     "title": "Property Detail",
     "group": "Property",
     "parameter": {
@@ -365,78 +436,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "./index.js",
     "groupTitle": "Property",
-    "name": "PostApiGetpropertydetail"
-  },
-  {
-    "type": "post",
-    "url": "/api/myProperty",
-    "title": "My Property",
-    "group": "Property",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "token",
-            "description": "<p>Authorization Token(required in header)</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Boolean",
-            "optional": false,
-            "field": "success",
-            "description": "<p>{1:success, 0:fail}</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "message",
-            "description": "<p>{message:'My property list successfully'}</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Array",
-            "optional": false,
-            "field": "result",
-            "description": "<p>Array Of Property List</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success",
-          "content": "HTTP/1.1 200 OK\n {\n    \"success\": 1,\n    \"message\": \"My property list successfully\",\n    \"result\": [\n        {\n            \"id\": 398,\n            \"propertyName\": \"Unique Kamshet Dome with Breathtaking Views\",\n            \"price\": 1500,\n            \"address\": \"Dome house hosted by Sapna\",\n            \"isFavorite\": false,\n            \"image\": \"https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-22 10:21-1624357265.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg\"\n        },\n        {\n            \"id\": 396,\n            \"propertyName\": \"Unique Kamshet Dome with Breathtaking Views\",\n            \"price\": 1500,\n            \"address\": \"Dome house hosted by Sapna\",\n            \"isFavorite\": true,\n            \"image\": \"https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-21 10:59-1624273187.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg\"\n        }\n    ],\n    \"total\": 2\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Token Missing error",
-          "content": "HTTP/1.1 422 Unprocessable Entity\n{\n      \"status\": \"Authorization Token not found\"\n}\n}",
-          "type": "json"
-        },
-        {
-          "title": "Property not found error",
-          "content": "HTTP/1.1 422 Unprocessable Entity\n{\n      \"status\": 0,\n\t\t \"error\": \"No Property  found.\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "./index.js",
-    "groupTitle": "Property",
-    "name": "PostApiMyproperty"
+    "name": "PostApiPropertydetail"
   },
   {
     "type": "post",
@@ -548,7 +548,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n{\n   \"success\": 1,\n   \"message\": \"Propertylist successfully\",\n   \"result\": [\n       {\n           \"id\": 398,\n           \"propertyName\": \"Unique Kamshet Dome with Breathtaking Views\",\n           \"price\": 1500,\n           \"address\": \"Dome house hosted by Sapna\",\n           \"isFavorite\": false,\n           \"image\": \"https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-22 10:21-1624357265.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg\"\n       },\n       {\n           \"id\": 397,\n           \"propertyName\": \"Pali Khopoli\",\n           \"price\": 200,\n           \"address\": \"A/26, Nalanda Society, B/h Namrata Soceity,\",\n           \"isFavorite\": false,\n           \"image\": \"https://harmistechnology.com/realestate/pictures/listing-thumb/1/21.06.22.00.59-1624348766.0277-48649933.jpeg\"\n       }\n   ],\n   \"total\": 2\n}",
+          "content": "HTTP/1.1 200 OK\n{\n   \"success\": 1,\n   \"message\": \"Propertylist successfully\",\n   \"result\": [\n       {\n           \"id\": 399,\n           \"price\": 1500,\n           \"address\": \"Dome house hosted by Sapna\",\n           \"lat\": \"23.07462100\",\n           \"long\": \"72.51202400\",\n           \"isFavorite\": false,\n           \"subCategory\": \"\",\n           \"category\": \"\",\n           \"bathRooms\": \"5\",\n           \"bedRooms\": \"4\",\n           \"propertyType\": \"For Rent\",\n           \"areaSize\": \"30000\",\n           \"image\": \"\"\n       },\n       {\n           \"id\": 398,\n           \"price\": 1500,\n           \"address\": \"Dome house hosted by Sapna\",\n           \"lat\": \"23.07462100\",\n           \"long\": \"72.51202400\",\n           \"isFavorite\": false,\n           \"subCategory\": \"Building\",\n           \"category\": \"Commerical\",\n           \"bathRooms\": \"5\",\n           \"bedRooms\": \"4\",\n           \"propertyType\": \"For Rent\",\n           \"areaSize\": \"30000\",\n           \"image\": \"https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-22 10:21-1624357265.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg\"\n       }\n   ],\n   \"total\": 4\n}",
           "type": "json"
         }
       ]
