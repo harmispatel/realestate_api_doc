@@ -479,6 +479,7 @@
  *    "result": [
  *        {
  *            "id": 399,
+ *            "propertyName": "Unique Kamshet Dome with Breathtaking Views",
  *            "price": 1500,
  *            "address": "Dome house hosted by Sapna",
  *            "lat": "23.07462100",
@@ -494,6 +495,7 @@
  *        },
  *        {
  *            "id": 398,
+ *            "propertyName": "Unique Kamshet Dome with Breathtaking Views",
  *            "price": 1500,
  *            "address": "Dome house hosted by Sapna",
  *            "lat": "23.07462100",
@@ -508,7 +510,7 @@
  *            "image": "https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-22 10:21-1624357265.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg"
  *        }
  *    ],
- *    "total": 4
+ *    "total": 2
  *}
  * @apiErrorExample {json} Token Missing error
  * HTTP/1.1 422 Unprocessable Entity
@@ -607,29 +609,45 @@
  * @apiSuccess {Array} result  Array Of Property List
  * @apiSuccessExample {json} Success
  * HTTP/1.1 200 OK
- {
-    "success": 1,
-    "message": "My property list successfully",
-    "result": [
-        {
-            "id": 398,
-            "propertyName": "Unique Kamshet Dome with Breathtaking Views",
-            "price": 1500,
-            "address": "Dome house hosted by Sapna",
-            "isFavorite": false,
-            "image": "https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-22 10:21-1624357265.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg"
-        },
-        {
-            "id": 396,
-            "propertyName": "Unique Kamshet Dome with Breathtaking Views",
-            "price": 1500,
-            "address": "Dome house hosted by Sapna",
-            "isFavorite": true,
-            "image": "https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-21 10:59-1624273187.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg"
-        }
-    ],
-    "total": 2
-}
+ *{
+ *    "success": 1,
+ *    "message": "My property list successfully",
+ *    "result": [
+ *        {
+ *            "id": 399,
+ *            "propertyName": "Unique Kamshet Dome with Breathtaking Views",
+ *            "price": 1500,
+ *            "address": "Dome house hosted by Sapna",
+ *            "lat": "23.07462100",
+ *            "long": "72.51202400",
+ *            "isFavorite": false,
+ *            "subCategory": "",
+ *            "category": "",
+ *            "bathRooms": "5",
+ *            "bedRooms": "4",
+ *            "propertyType": "For Rent",
+ *            "areaSize": "30000",
+ *            "image": ""
+ *        },
+ *        {
+ *            "id": 398,
+ *            "propertyName": "Unique Kamshet Dome with Breathtaking Views",
+ *            "price": 1500,
+ *            "address": "Dome house hosted by Sapna",
+ *            "lat": "23.07462100",
+ *            "long": "72.51202400",
+ *            "isFavorite": false,
+ *            "subCategory": "Building",
+ *            "category": "Commerical",
+ *            "bathRooms": "5",
+ *            "bedRooms": "4",
+ *            "propertyType": "For Rent",
+ *            "areaSize": "30000",
+ *            "image": "https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-22 10:21-1624357265.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg"
+ *        }
+ *    ],
+ *    "total": 2
+ *}
  * @apiErrorExample {json} Token Missing error
  * HTTP/1.1 422 Unprocessable Entity
  *{
@@ -658,12 +676,20 @@
  *    "message": "Wishlist successfully",
  *    "result": [
  *        {
- *            "id": 398,
+ *            "id": 396,
  *            "propertyName": "Unique Kamshet Dome with Breathtaking Views",
  *            "price": 1500,
  *            "address": "Dome house hosted by Sapna",
- *            "isFavorite": false,
- *            "image": "https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-22 10:21-1624357265.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg"
+ *            "lat": "23.07462100",
+ *            "long": "72.51202400",
+ *            "isFavorite": true,
+ *            "subCategory": "",
+ *            "category": "Residential",
+ *            "bathRooms": "5",
+ *            "bedRooms": "4",
+ *            "propertyType": "For Rent",
+ *            "areaSize": "30000",
+ *            "image": "https://harmistechnology.com/realestate/pictures/listing-thumb/1/21-06-21 10:59-1624273187.1d6426ed-d429-424b-a846-a181f83bf709.jpeg.jpeg"
  *        }
  *    ],
  *    "total": 1
