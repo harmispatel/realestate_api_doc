@@ -557,7 +557,7 @@
       "examples": [
         {
           "title": "Token Missing error",
-          "content": "HTTP/1.1 422 Unprocessable Entity\n{\n      \"status\": \"Authorization Token not found\"\n}\n}",
+          "content": "HTTP/1.1 422 Unprocessable Entity\n{\n      \"status\": \"Authorization Token not found\"\n}",
           "type": "json"
         },
         {

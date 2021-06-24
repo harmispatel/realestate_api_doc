@@ -501,7 +501,6 @@
  *{
  *       "status": "Authorization Token not found"
  *}
- *}
  * @apiErrorExample {json} Property not found error
  * HTTP/1.1 422 Unprocessable Entity
  *{
