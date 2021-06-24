@@ -12,3 +12,4 @@ npm install apidoc -g
 
 C:\xampp\htdocs\admin_panel_api_doc>apidoc -i ./ -o ./
 http://localhost/admin_panel_api_doc
+h
